@@ -6,8 +6,7 @@ export default class TasksList extends Component {
 
     render() {
         let { tasks, onDelete, onToggleImportant, onToggleDone } = this.props;
-        let tasksArr = tasks.map(el => {
-            let { id, ...itemProps } = el;
+        let tasksArr = tasks.map(({ id, ...itemProps }) => {
             return  <li key={ id }>
                         <Task { ...itemProps }
                               onDelete = { () => onDelete(id) }
